@@ -1,0 +1,11 @@
+#!/bin/bash
+set -x
+
+for (( i=1; i<=$#; i++ ))
+do
+	y=`eval echo "$"$i`
+	cat $y > anyscript.txt
+	echo '#!/bin/bash' > $y
+	cat anyscript.txt >> $y
+done
+
